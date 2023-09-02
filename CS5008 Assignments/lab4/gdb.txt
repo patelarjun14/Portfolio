@@ -1,0 +1,42 @@
+
+-bash-4.2$ gdb greeting.c
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+"/home/patelarjun1/a1/Patelarjun1_CS5008SPRING2022/lab4/greeting.c": not in executable format: File format not recognized
+(gdb) info break
+No breakpoints or watchpoints.
+(gdb) b main
+No symbol table is loaded.  Use the "file" command.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 1 (main) pending.
+(gdb) r
+Starting program:
+No executable file specified.
+Use the "file" or "exec-file" command.
+(gdb) greeting.c
+Undefined command: "greeting".  Try "help".
+(gdb) file greetin.c
+greetin.c: No such file or directory.
+(gdb) file greeting.c
+"/home/patelarjun1/a1/Patelarjun1_CS5008SPRING2022/lab4/greeting.c": not in executable format: File format not recognized
+(gdb) r
+Starting program:
+No executable file specified.
+Use the "file" or "exec-file" command.
+(gdb) exec-file greeting.c
+"/home/patelarjun1/a1/Patelarjun1_CS5008SPRING2022/lab4/greeting.c": not in executable format: File format not recognized
+(gdb) file greeting
+greeting: No such file or directory.
+(gdb) file greeting.c
+"/home/patelarjun1/a1/Patelarjun1_CS5008SPRING2022/lab4/greeting.c": not in executable format: File format not recognized
+(gdb) man gdp
+Undefined command: "man".  Try "help".
+(gdb)
+
