@@ -36,6 +36,6 @@ Arjun's work in the CS6140 project exhibits his commitment to research and advan
 
 ## Contact Information
 
-For further inquiries or to connect with Arjun Patel, please feel free to reach out via email at [arjun@email.com](mailto:arjun@email.com) or through [LinkedIn](https://linkedin.com/in/arjunpatel). Your interest is highly appreciated, and Arjun looks forward to discussing his experiences and projects in more detail.
+For further inquiries or to connect with Arjun Patel, please feel free to reach out via email at [patelaj14@outlook.com](mailto:patelaj14@outlook.com) or through [LinkedIn](https://https://www.linkedin.com/in/arjunhpatel/). Your interest is highly appreciated, and Arjun looks forward to discussing his experiences and projects in more detail.
 
 Thank you for visiting Arjun Patel's portfolio, and we hope you find the content informative and inspiring.
