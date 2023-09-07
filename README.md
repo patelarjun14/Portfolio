@@ -1,41 +1,31 @@
 # Arjun Patel's Portfolio
 
 ## Introduction
+Welcome to Arjun Patel's portfolio, showcasing a selection of projects and assignments completed during his academic journey at Northeastern University. This portfolio provides an overview of Arjun's skills and achievements in the field of computer science and related disciplines.
 
-Welcome to Arjun Patel's portfolio, showcasing a selection of projects completed during his academic journey at Northeastern University. This portfolio provides an overview of Arjun's skills and achievements in the field of computer science and related disciplines.
+### CS5001
+Introduces systematic problem solving through programming. Offers students an opportunity to learn how to analyze a problem, how to divide and organize the problem into appropriate components, how to describe the problem in a computer language, how to analyze and understand the behavior of their programs, and how to test that their programs are working correctly. Additionally, introduces a method of program design called object-oriented programming and various ways to organize data, including a discussion of their advantages and disadvantages. To practice the course concepts, students undertake assignments ranging from small, highly specified programming tasks to larger open-ended problems where students design and code their own solutions.
 
-## Projects and Assignments
+### CS5004
+Presents a comparative approach to object-oriented programming and design. Discusses the concepts of object, class, metaclass, message, method, inheritance, and genericity. Reviews forms of polymorphism in object-oriented languages. Contrasts the use of inheritance and composition as dual techniques for software reuse—forwarding vs. delegation and subclassing vs. subtyping. Offers students an opportunity to obtain a deeper understanding of the principles of object-oriented programming and design, including software components, object-oriented design patterns, and the use of graphical design notations such as UML (unified modeling language). Illustrates basic concepts in object-oriented design with case studies in application frameworks and by writing programs in Java.
 
-### CS5001 Project
 
-This section presents Arjun's work on projects and assignments associated with the course CS5001. Detailed descriptions and relevant content for these projects can be found here.
+### CS5008
+Presents an integrated approach to the study of data structures, algorithms, and their application within systems topics. Introduces a variety of fundamental algorithmic techniques (divide-and-conquer, dynamic programming, graph algorithms) and systems topics (models of computation, computer architecture, compilation, system software, networking). Demonstrates the integration of topics through programming assignments in the C language that implement fundamental data structures (lists, queues, trees, maps, graphs) and algorithms as they are applied in computer systems. Additional breadth topics include programming applications that expose students to primitives of different subsystems using threads and sockets.
 
-### CS5004 Projects
+### CS5100
+Introduces the fundamental problems, theories, and algorithms of the artificial intelligence field. Topics include heuristic search and game trees, knowledge representation using predicate calculus, automated deduction and its applications, problem solving and planning, and introduction to machine learning. Required course work includes the creation of working programs that solve problems, reason logically, and/or improve their own performance using techniques presented in the course. Requires experience in Java programming.
 
-Arjun has contributed to a variety of projects as part of the CS5004 course. These projects demonstrate his proficiency in key computer science concepts and technologies.
+### CS5200
+Introduces relational database management systems as a class of software systems. Prepares students to be sophisticated users of database management systems. Covers design theory, query language, and performance/tuning issues. Topics include relational algebra, SQL, stored procedures, user-defined functions, cursors, embedded SQL programs, client-server interfaces, entity-relationship diagrams, normalization, B-trees, concurrency, transactions, database security, constraints, object-relational DBMSs, and specialized engines such as spatial, text, XML conversion, and time series. Includes exercises using a commercial relational or object-relational database management system.
 
-### CS5008 Assignments
+### CS5500
+Covers the foundations of software engineering, including software development life cycle models (e.g., waterfall, spiral, agile); requirements analysis; user-centered design; software design principles and patterns; testing (functional testing, structural testing, testing strategies); code refactoring and debugging; software architecture and design; and integration and deployment. Includes a course project where some of the software engineering methods (from requirements analysis to testing) are applied in a team-based setting. Requires admission to MS program or completion of all transition courses.
 
-In the CS5008 course, Arjun has completed various assignments that reflect his dedication to problem-solving and coding skills. Explore these assignments to gain insights into his capabilities.
-
-### CS5100 Projects
-
-Arjun has taken on challenging projects within the CS5100 course, showcasing his ability to tackle advanced topics and deliver meaningful results.
-
-### CS5200 Project
-
-The CS5200 project reflects Arjun's expertise in specific areas of computer science. Delve into this project to understand his specialization and innovative contributions.
-
-### CS5500 Project
-
-This section features Arjun's work on the CS5500 project. It highlights his collaborative skills and teamwork in a project-based learning environment.
-
-### CS6140 Project
-
-Arjun's work in the CS6140 project exhibits his commitment to research and advanced coursework. Explore this section to gain insights into his academic pursuits.
+### CS6140
+Provides a broad look at a variety of techniques used in machine learning and data mining, and also examines issues associated with their use. Topics include algorithms for supervised learning including decision tree induction, artificial neural networks, instance-based learning, probabilistic methods, and support vector machines; unsupervised learning; and reinforcement learning. Also covers computational learning theory and other methods for analyzing and measuring the performanceof learning algorithms. Course work includes a programming term project.
 
 ## Contact Information
-
 For further inquiries or to connect with Arjun Patel, please feel free to reach out via email at [patelaj14@outlook.com](mailto:patelaj14@outlook.com) or through [LinkedIn](https://https://www.linkedin.com/in/arjunhpatel/). Your interest is highly appreciated, and Arjun looks forward to discussing his experiences and projects in more detail.
 
 Thank you for visiting Arjun Patel's portfolio, and we hope you find the content informative and inspiring.
