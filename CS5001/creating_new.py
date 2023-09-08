@@ -7,8 +7,7 @@ import turtle
 import random
 
 NUM_SQUARES = 8
-SQUARE = 50
-
+SQUARE_SIZE = 50
 COLOR_LIGHT_GRAY = 'light gray'
 COLOR_WHITE = 'white'
 COLOR_RED = 'red'
@@ -16,44 +15,24 @@ COLOR_GREEN = 'green'
 COLOR_PINK = 'pink'
 COLOR_GREY = 'grey'
 COLOR_BLACK = 'black'
-
+COLOR_YELLOW = 'yellow'
 PEN = turtle.Turtle()
-
-
 
 RIGHT_ANGLE = 90
 SQUARE_SIDES = 4
-CIRCLE_SIZE =25
-N_ONE = -1
-ZERO =0
-TWO =2
-ONE = 1
-THREE = 3
-FOUR = 4
-FIVE = 5
-SIX = 6
-SEVEN = 7
-EIGHT = 8
-TWENTY_FIVE = 25
-TWELVE = 12
+CIRCLE_SIZE = 25
 
-N_TWO_HUN = -200
-N_ONE_FIT = -150
-N_ONE_HUN = -100
-N_FIT = -50
-FIT = 50
-ONE_HUN = 100
-ONE_FIT = 150
-TWO_HUN = 200
+BLACK = 0
+RED = 1
+EMPTY = '_'
 
 SELECTED = "selected"
 AVAILABLE = "available"
 CAPTURE = "capture"
-KING0 = "King0"
-KING1 = "King1"
 
-BLACK = ZERO
-RED = ONE
+KING = 'king'
+BLACK_KING = "King0"
+RED_KING = "King1"
 
 def Draw_Square(size):
         PEN.begin_fill()
@@ -64,39 +43,45 @@ def Draw_Square(size):
         PEN.end_fill()
         PEN.penup()
 
-'''
-Class Board:
-Board is the object that defines the only the board of a checkers game. This does not include pieces. 
-This class is specifically designed for creating the board
-'''
+def Draw_Circle(out_color,in_color,a_turtle,corner,x,y):
+    a_turtle.color(out_color, in_color)
+    a_turtle.setposition(corner + SQUARE_SIZE * x, corner + SQUARE_SIZE * y)
+    a_turtle.forward(CIRCLE_SIZE)
+    a_turtle.begin_fill()
+    a_turtle.pendown()
+    a_turtle.circle(CIRCLE_SIZE)
+    a_turtle.end_fill()
+    a_turtle.penup()
+
 class Board:
 
     def __init__(self):
-        self.board_size = NUM_SQUARES * SQUARE
-        self.window_size = self.board_size + SQUARE
+        self.board_size = NUM_SQUARES * SQUARE_SIZE
+        self.window_size = self.board_size + SQUARE_SIZE
     
 
     def Create_Board(self):
         turtle.setup(self.window_size, self.window_size)
         turtle.screensize(self.board_size,self.board_size)
         turtle.bgcolor(COLOR_WHITE)
-        turtle.tracer(ZERO,ZERO)
+        turtle.tracer(0,0)
 
-        corner = -self.board_size / TWO-ONE
+        ###################################################################
+        corner = -self.board_size / 2-1
         PEN.setposition(corner,corner)
         Draw_Square(self.board_size)
         PEN.penup()
         PEN.hideturtle()
         PEN.color(COLOR_BLACK,COLOR_WHITE)
         PEN.setposition(corner,corner)
-            
+        ###################################################################
 
         PEN.color(COLOR_BLACK, COLOR_LIGHT_GRAY)
         for col in range(NUM_SQUARES):
             for row in range(NUM_SQUARES):
-                PEN.setposition(corner + SQUARE * col, corner + SQUARE * row)
-                if col % TWO != row % TWO:
-                    Draw_Square(SQUARE)
+                PEN.setposition(corner + SQUARE_SIZE * col, corner + SQUARE_SIZE * row)
+                if col % 2 != row % 2:
+                    Draw_Square(SQUARE_SIZE)
 
 class Pieces:
 
@@ -106,91 +91,39 @@ class Pieces:
         self.stage = 'regular'
         self.taken = False
 
-        if color == 'black':
-            self.value = 0
-        if color == 'red':
-            self.value = 1
-        if color == '_':
-            self.value = '_'
-
-
-
-
-
-
+        if color == COLOR_BLACK:
+            self.value = BLACK
+        if color == COLOR_RED:
+            self.value = RED
+        if color == EMPTY:
+            self.value = EMPTY
 
 
     def Draw_Piece(self,a_turtle,x,y):
 
-        board_size = NUM_SQUARES * SQUARE
-        corner = -board_size / TWO - ONE
+        board_size = NUM_SQUARES * SQUARE_SIZE
+        corner = -board_size / 2 - 1
 
         # If the piece is selected, we need it to turn green
         if self.selected == True:
-            a_turtle.color('green', self.color)
-
-            a_turtle.setposition(corner + SQUARE * x, corner + SQUARE * y)
-            a_turtle.forward(CIRCLE_SIZE)
-            a_turtle.begin_fill()
-            a_turtle.pendown()
-            a_turtle.circle(CIRCLE_SIZE)
-            a_turtle.end_fill()
-            a_turtle.penup()
+            Draw_Circle(COLOR_GREEN,self.color,a_turtle,corner,x,y)
 
         # If the piece is black or red, lets draw it
         if (self.value == 0 or self.value == 1) and self.selected == False:
+            Draw_Circle(COLOR_BLACK,self.color,a_turtle,corner,x,y)
 
-            a_turtle.color(COLOR_BLACK, self.color)
-
-            a_turtle.setposition(corner + SQUARE * x, corner + SQUARE * y)
-            a_turtle.forward(CIRCLE_SIZE)
-            a_turtle.begin_fill()
-            a_turtle.pendown()
-            a_turtle.circle(CIRCLE_SIZE)
-            a_turtle.end_fill()
-            a_turtle.penup()
-
-        if self.stage == 'king':
-            a_turtle.color('yellow', self.color)
-
-            a_turtle.setposition(corner + SQUARE * x, corner + SQUARE * y)
-            a_turtle.forward(CIRCLE_SIZE)
-            a_turtle.begin_fill()
-            a_turtle.pendown()
-            a_turtle.circle(CIRCLE_SIZE)
-            a_turtle.end_fill()
-            a_turtle.penup()
+        if self.stage == KING:
+            Draw_Circle(COLOR_YELLOW,self.color,a_turtle,corner,x,y)
         
         # If the piece is taken, we need to highlight it as yellow
         if self.taken == True:
- 
-            a_turtle.color(COLOR_BLACK, 'yellow')
-
-            a_turtle.setposition(corner + SQUARE * x, corner + SQUARE * y)
-            a_turtle.forward(CIRCLE_SIZE)
-            a_turtle.begin_fill()
-            a_turtle.pendown()
-            a_turtle.circle(CIRCLE_SIZE)
-            a_turtle.end_fill()
-            a_turtle.penup()
-
-
+            Draw_Circle(COLOR_BLACK, COLOR_YELLOW,a_turtle,corner,x,y)
 
         # If the piece is empty is on a grey square, we need to draw the square
-        if (self.value == '_') and (x % TWO != y % TWO) and self.taken == False:
-            
+        if (self.value == '_') and (x % 2 != y % 2) and self.taken == False:
             a_turtle.color(COLOR_BLACK, COLOR_LIGHT_GRAY)
-            a_turtle.setposition(corner + SQUARE * x, corner + SQUARE * y)
-            a_turtle.begin_fill()
-            a_turtle.pendown()
-            for i in range(SQUARE_SIDES):
-                a_turtle.forward(SQUARE)
-                a_turtle.left(RIGHT_ANGLE)
-            a_turtle.end_fill()
-            a_turtle.penup()
-
-            
-
+            a_turtle.setposition(corner + SQUARE_SIZE * x, corner + SQUARE_SIZE * y)
+            Draw_Square(SQUARE_SIZE)
 
 class Square():
 
@@ -199,19 +132,11 @@ class Square():
         self.piece = piece
 
     def Draw_Square_State(self,a_turtle,x,y):
-        board_size = NUM_SQUARES * SQUARE
-        corner = -board_size / TWO - ONE
+        board_size = NUM_SQUARES * SQUARE_SIZE
+        corner = -board_size / 2 - 1
 
         if self.avaliable == True:
-            
-            a_turtle.color(COLOR_BLACK, 'green')
-            a_turtle.setposition(corner + SQUARE * x, corner + SQUARE * y)
-            a_turtle.forward(CIRCLE_SIZE)
-            a_turtle.begin_fill()
-            a_turtle.pendown()
-            a_turtle.circle(CIRCLE_SIZE)
-            a_turtle.end_fill()
-            a_turtle.penup()
+            Draw_Circle(COLOR_BLACK,COLOR_GREEN,a_turtle,corner,x,y)
 
         if self.avaliable == False:
             self.piece.Draw_Piece(PEN,x,y)
@@ -229,7 +154,7 @@ class Action():
 
 class GameState():
     def __init__(self):
-        self.gamestate = [['_']*EIGHT,['_']*EIGHT,['_']*EIGHT,['_']*EIGHT,['_']*EIGHT,['_']*EIGHT,['_']*EIGHT,['_']*EIGHT,]
+        self.gamestate = [['_']*8,['_']*8,['_']*8,['_']*8,['_']*8,['_']*8,['_']*8,['_']*8,]
         self.moves = 1
         self.turn = 'black'
         self.move_taken = False
@@ -258,14 +183,14 @@ class GameState():
     def Create_GameState(self,board_size):
         for col in range(NUM_SQUARES):
             for row in range(NUM_SQUARES):
-                if (col % TWO != row % TWO) and (row > FOUR):
+                if (col % 2 != row % 2) and (row > 4):
                     self.gamestate[col][row]= Square(Pieces('red'))
                 else:
                     self.gamestate[col][row] = Square(Pieces('_'))
 
         for col in range(NUM_SQUARES):
             for row in range(NUM_SQUARES):       
-                if (col % TWO != row % TWO) and (row < THREE):
+                if (col % 2 != row % 2) and (row < 3):
                     self.gamestate[col][row]= Square(Pieces('black'))
 
 
@@ -314,10 +239,10 @@ class GameState():
                     self.gamestate[col][row].piece.value = 0
 
                 if row == 0 and self.gamestate[col][row].piece.color == 'red':
-                    self.gamestate[col][row].piece.stage = 'king'
+                    self.gamestate[col][row].piece.stage = KING
                 
                 if row == 7 and self.gamestate[col][row].piece.color == 'black':
-                    self.gamestate[col][row].piece.stage = 'king'
+                    self.gamestate[col][row].piece.stage = KING
 
     def remove_piece(self,x,y):
         if x != 7 and y != 7:
@@ -367,7 +292,7 @@ class GameState():
             
         # lower right
         if (self.gamestate[x][y].piece.color == 'black' and 
-        (x != 7 and x != 6) and (y != 0 and y != 0) and self.gamestate[x][y].piece.stage == 'king' and 
+        (x != 7 and x != 6) and (y != 0 and y != 0) and self.gamestate[x][y].piece.stage == KING and 
         (self.gamestate[x+1][y-1].piece.color == 'red' and
         self.gamestate[x+2][y-2].piece.value == '_')):
 
@@ -378,7 +303,7 @@ class GameState():
 
         # lower left
         if (self.gamestate[x][y].piece.color == 'black' and 
-        (x != 0 and x !=1) and (y != 0 and y != 0) and self.gamestate[x][y].piece.stage == 'king' and 
+        (x != 0 and x !=1) and (y != 0 and y != 0) and self.gamestate[x][y].piece.stage == KING and 
         (self.gamestate[x-1][y-1].piece.color == 'red' and
         self.gamestate[x-2][y-2].piece.value == '_')):
 
@@ -410,7 +335,7 @@ class GameState():
             self.gamestate[x+1][y-1].piece.value = 'X'
 
         if (self.gamestate[x][y].piece.color == 'red' and 
-        (x != 0 and x !=1) and (y != 7 and y != 6) and self.gamestate[x][y].piece.stage == 'king' and 
+        (x != 0 and x !=1) and (y != 7 and y != 6) and self.gamestate[x][y].piece.stage == KING and 
         (self.gamestate[x-1][y+1].piece.color == 'black' and 
         self.gamestate[x-2][y+2].piece.value == '_')):
 
@@ -420,7 +345,7 @@ class GameState():
             self.gamestate[x-1][y+1].piece.value = 'X'
         
         if (self.gamestate[x][y].piece.color == 'red' and 
-        (x != 7 and x != 6) and (y != 7 and y != 6) and self.gamestate[x][y].piece.stage == 'king' and 
+        (x != 7 and x != 6) and (y != 7 and y != 6) and self.gamestate[x][y].piece.stage == KING and 
         (self.gamestate[x+1][y+1].piece.color == 'black' and 
         self.gamestate[x+2][y+2].piece.value == '_')):
 
@@ -460,12 +385,12 @@ class GameState():
         # bottom left
         if x != 0 and y != 0:
             if (self.gamestate[x-1][y-1].piece.value == '_' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
 
                 self.gamestate[x-1][y-1].avaliable = True
 
             elif (self.gamestate[x-1][y-1].piece.color == 'red' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
                 self.take_move(x,y)
 
         # upper right
@@ -481,15 +406,13 @@ class GameState():
         # bottom right
         if x != 7 and y != 0:
             if (self.gamestate[x+1][y-1].piece.value == '_' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
 
                 self.gamestate[x+1][y-1].avaliable = True
 
             elif (self.gamestate[x+1][y-1].piece.color == 'red' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
                 self.take_move(x,y)
-
-
 
     def black_take_avaliable(self,x,y):
         if x != 0 and y != 7:
@@ -500,7 +423,7 @@ class GameState():
         # bottom left
         if x != 0 and y != 0:
             if (self.gamestate[x-1][y-1].piece.color == 'red' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
                 self.take_move(x,y)
 
         # upper right
@@ -512,7 +435,7 @@ class GameState():
         # bottom right
         if x != 7 and y != 0:
             if (self.gamestate[x+1][y-1].piece.color == 'red' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
                 self.take_move(x,y)
         else:
             self.move_taken = False
@@ -524,10 +447,10 @@ class GameState():
         # upper left
         if x != 0 and y != 7:
             if (self.gamestate[x-1][y+1].piece.value == '_' and 
-            self.gamestate[x][y].piece.stage == 'king'):
+            self.gamestate[x][y].piece.stage == KING):
                 self.gamestate[x-1][y+1].avaliable = True
             elif (self.gamestate[x-1][y+1].piece.color == 'black' and 
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
                 self.take_move(x,y)
 
         # bottom left
@@ -541,12 +464,12 @@ class GameState():
         # upper right
         if x != 7 and y != 7:
             if (self.gamestate[x+1][y+1].piece.value == '_' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
 
                 self.gamestate[x+1][y+1].avaliable = True
 
             elif (self.gamestate[x+1][y+1].piece.value == 'black' and
-                self.gamestate[x][y].piece.stage == 'king'):
+                self.gamestate[x][y].piece.stage == KING):
                 self.take_move(x,y)
             
 
@@ -574,13 +497,13 @@ class Game():
         y_1= -1
     
 
-        for xcord in range(EIGHT):
+        for xcord in range(8):
             if cord[xcord] <= x:
-                x_1 +=ONE
+                x_1 +=1
 
-        for ycord in range(EIGHT):
+        for ycord in range(8):
             if cord[ycord] <= y:
-                y_1 +=ONE
+                y_1 +=1
 
         return x_1, y_1
 
@@ -704,21 +627,21 @@ class Game():
         turtle.onscreenclick(self.Black_Select)
 
     def Create_Game(self):
-        try:
-            self.board.Create_Board()
-            self.g_state.Create_GameState(self.board.board_size)
-            self.g_state.Update_GameState()
-            turtle.onscreenclick(self.Black_Select)
-            turtle.done()
-        except Exception as e:
-            pass
+        #try:
+        self.board.Create_Board()
+        self.g_state.Create_GameState(self.board.board_size)
+        self.g_state.Update_GameState()
+        turtle.onscreenclick(self.Black_Select)
+        turtle.done()
+        #except Exception as e:
+        #    pass
 
 def main():
-    try:
-        Create_Game = Game()
-        Create_Game.Create_Game()
-    except Exception as e:
-        pass
+    #try:
+    Create_Game = Game()
+    Create_Game.Create_Game()
+    #except Exception as e:
+    #    pass
 
 
 if __name__ == '__main__':
