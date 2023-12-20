@@ -9,7 +9,6 @@ Introduces systematic problem solving through programming. Offers students an op
 ### CS5004 Object Oriented Design
 Presents a comparative approach to object-oriented programming and design. Discusses the concepts of object, class, metaclass, message, method, inheritance, and genericity. Reviews forms of polymorphism in object-oriented languages. Contrasts the use of inheritance and composition as dual techniques for software reuse—forwarding vs. delegation and subclassing vs. subtyping. Offers students an opportunity to obtain a deeper understanding of the principles of object-oriented programming and design, including software components, object-oriented design patterns, and the use of graphical design notations such as UML (unified modeling language). Illustrates basic concepts in object-oriented design with case studies in application frameworks and by writing programs in Java.
 
-
 ### CS5008 Data Structures and Algorithms
 Presents an integrated approach to the study of data structures, algorithms, and their application within systems topics. Introduces a variety of fundamental algorithmic techniques (divide-and-conquer, dynamic programming, graph algorithms) and systems topics (models of computation, computer architecture, compilation, system software, networking). Demonstrates the integration of topics through programming assignments in the C language that implement fundamental data structures (lists, queues, trees, maps, graphs) and algorithms as they are applied in computer systems. Additional breadth topics include programming applications that expose students to primitives of different subsystems using threads and sockets.
 
@@ -24,6 +23,10 @@ Covers the foundations of software engineering, including software development l
 
 ### CS6140 Machine Learning
 Provides a broad look at a variety of techniques used in machine learning and data mining, and also examines issues associated with their use. Topics include algorithms for supervised learning including decision tree induction, artificial neural networks, instance-based learning, probabilistic methods, and support vector machines; unsupervised learning; and reinforcement learning. Also covers computational learning theory and other methods for analyzing and measuring the performanceof learning algorithms. Course work includes a programming term project.
+
+### CS6220 Data Mining Techniques
+Covers various aspects of data mining, including classification, prediction, ensemble methods, association rules, sequence mining, and cluster analysis. The class project involves hands-on practice of mining useful knowledge from a large data set.
+
 
 ## Contact Information
 For further inquiries or to connect with Arjun Patel, please feel free to reach out via email at [patelaj14@outlook.com](mailto:patelaj14@outlook.com) or through [LinkedIn](https://https://www.linkedin.com/in/arjunhpatel/). Your interest is highly appreciated, and Arjun looks forward to discussing his experiences and projects in more detail.
