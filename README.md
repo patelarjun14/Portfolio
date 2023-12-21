@@ -1,7 +1,7 @@
 # Arjun Patel's Portfolio
 
 ## Introduction
-Welcome to Arjun Patel's portfolio, showcasing a selection of projects and assignments completed during his academic journey at Northeastern University. This portfolio provides an overview of Arjun's skills and achievements in the field of computer science and related disciplines.
+Welcome to Arjun Patel's portfolio, showcasing a selection of projects and assignments completed during his academic journey at Northeastern University. This portfolio provides an overview of Arjun's skills and achievements in the field of computer science and related disciplines. If you would like to quickly view his projects, please look at Overall Project Highlights
 
 ### CS5001 Intensive Foundations of CS
 Introduces systematic problem solving through programming. Offers students an opportunity to learn how to analyze a problem, how to divide and organize the problem into appropriate components, how to describe the problem in a computer language, how to analyze and understand the behavior of their programs, and how to test that their programs are working correctly. Additionally, introduces a method of program design called object-oriented programming and various ways to organize data, including a discussion of their advantages and disadvantages. To practice the course concepts, students undertake assignments ranging from small, highly specified programming tasks to larger open-ended problems where students design and code their own solutions.
@@ -29,6 +29,6 @@ Covers various aspects of data mining, including classification, prediction, ens
 
 
 ## Contact Information
-For further inquiries or to connect with Arjun Patel, please feel free to reach out via email at [patelaj14@outlook.com](mailto:patelaj14@outlook.com) or through [LinkedIn](https://https://www.linkedin.com/in/arjunhpatel/). Your interest is highly appreciated, and Arjun looks forward to discussing his experiences and projects in more detail.
+For further inquiries or to connect with Arjun Patel, please feel free to reach out via email at [patelaj14@outlook.com](mailto:patelaj14@outlook.com) or through [LinkedIn](https://www.linkedin.com/in/arjunhpatel/). Your interest is highly appreciated, and Arjun looks forward to discussing his experiences and projects in more detail.
 
 Thank you for visiting Arjun Patel's portfolio, and we hope you find the content informative and inspiring.
