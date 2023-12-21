@@ -1,26 +1,12 @@
-# CS 6140: Final Project - Group 5
 ## Stock Price Predictor using Machine Learning Algorithms
-### 4th Yuhao Hua
-Khoury College
-Vancouver, BC, Canada
-patel.arjun1@northeastern.edu
-tang.ching@northeastern.edu
-ning.ha@northeastern.edu
-hua.yuha@northeastern.edu
 
 1st Arjun Patel
-Khoury College
 
 2nd Ching Yin Jenny Tang
-Khoury College
 
 3rd Hao Sheng Ning
-Khoury College
-Seattle, WA, USA
 
-Seattle, WA, USA
-
-Portland, ME, USA
+4th Yuhao Hua
 
 # Abstract
 

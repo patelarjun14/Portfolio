@@ -1,9 +1,5 @@
 # Pleasant Pedal
 
-**Final Report - August 10, 2022**
-
-**Group Members:** Marcela Vijil, Arjun Patel, Srishti Hegde, Allison Ying, and Sheetal Turaga
-
 ## Value Proposition
 
 *Pleasant Pedal* is a web application designed for Seattle-based cyclists, catering to all skill levels, seeking optimal cycling experiences away from crowded trails. The application's core objectives include:
@@ -23,8 +19,6 @@ The project's data analysis revealed valuable insights into the local biking com
 3. **Commuter-Friendly Neighborhoods**: Areas like Rainier Beach, Leschi, Sand Point, Capitol Hill, Ballard, and Fremont offer extensive transit and ground passenger services, with better-maintained bike infrastructure.
 
 4. **Weather Impact**: Biking activity increases with higher temperatures, and rain doesn't significantly deter Seattle cyclists, possibly due to the region's frequent rainfall.
-
-
 
 ## Future Steps
 
