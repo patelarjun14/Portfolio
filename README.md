@@ -4,7 +4,7 @@ Welcome to Arjun's Portfolio! Here, you'll discover a showcase of Arjun Patel's 
 
 ## Explore Arjun's Projects
 
-If you're interested in Arjun's projects, head over to the [Projects](./projects) page. There, you'll find detailed information about various endeavors, ranging from coding experiments to innovative applications.
+If you're interested in Arjun's projects, head over to the [Projects](./Projects) page. There, you'll find detailed information about various endeavors, ranging from coding experiments to innovative applications.
 
 ## Northeastern University Folder
 
