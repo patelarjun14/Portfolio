@@ -18,8 +18,8 @@ import pandas_ta as ta
 import time
 
 # Here are the API Keys
-alpha_vantage_key = '9NLUTD6I2QZTR2BZ'
-fred = fa.Fred('c0fec4be089bf8ebac233c2103bffee5')
+alpha_vantage_key = os.environ["ALPHA_VANTAGE_API_KEY"]
+fred = fa.Fred(api_key=os.environ["FRED_API_KEY"])
 
 #########################################################################################################################
 # We are going to use Yahoo Finance's database to pull stock price information
